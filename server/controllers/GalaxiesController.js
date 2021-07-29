@@ -14,6 +14,8 @@ export class GalaxiesController extends BaseController {
     try {
       const galaxies = await galaxiesService.getAll(req.query)
       res.send(galaxies)
+    } catch (error) {
+      next(error)
     }
   }
 }
